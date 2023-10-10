@@ -11,6 +11,7 @@ def main():
     print(f"Reversed string: {reversed_string}")
 if __name__ == "__main__":
     main()
+
 2) Explanation: The issue is with comparing a string with a number, as we cannot compare a string with a number.
 corrected code:-
 def get_age():
@@ -29,7 +30,28 @@ def main():
         print("Invalid input. You must be at least 18 years old.")
 if __name__ == "__main__":
     main()
-3) Explanation:I cannot see any error in the code, and the code works fine.
+
+3)Explanation: To fix this issue, you should first read the content of the file and store it in a variable, close the file, and then open it in write mode to write the modified content.
+Corrected code:
+def read_and_write_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            content = file.read()
+        
+        with open(filename, 'w') as file:
+            file.write(content.upper())
+        
+        print(f"File '{filename}' processed successfully.")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+def main():
+    filename = "sample.txt"
+    read_and_write_file(filename)
+
+if __name__ == "__main__":
+    main()
+
 4)Explanation: The issue is with the function not having a return statement.
 corrected code:-
 def merge_sort(arr):
